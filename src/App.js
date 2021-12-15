@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import todos from './todos.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      todos
+    }
+  }
+  
+  render() {
+    return (
+      <div className="App">
+        <nav className="navbar navbar-dark bg-dark">
+        <ul className="nav nav-pills nav-fills">
+          <li className="nav-item">
+            <a className="nav-link active" aria-current="page" href=" ">
+              Tasks
+            </a>
+          </li>
+        </ul>
+      </nav>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
